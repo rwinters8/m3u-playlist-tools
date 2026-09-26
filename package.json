@@ -7,7 +7,9 @@
   "main": "dist/index.js",
   "types": "dist/parser.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pretest": "tsc",
+    "test": "node --test test/"
   },
   "devDependencies": {
     "typescript": "^5.5.0"

@@ -83,6 +83,16 @@ tsc
 Compiles `src/` to `dist/` per `tsconfig.json`. No other tooling is
 required; there are no runtime dependencies.
 
+## Testing
+
+```
+npm test
+```
+
+Builds `dist/` and runs the suite under `test/` with Node's built-in test
+runner (`node --test`). No test framework is installed - `node:test` and
+`node:assert` are part of the Node standard library.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
