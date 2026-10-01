@@ -63,6 +63,22 @@ parsePlaylist('#EXTM3U\n#EXTINF:213,Some Track\n');
 // }
 ```
 
+## Printer options
+
+`printPlaylist` takes an optional second argument:
+
+```ts
+printPlaylist(playlist, { dedupe: true, sort: 'location' });
+```
+
+- `dedupe: true` drops later tracks whose location was already seen. The
+  first occurrence and its `#EXTINF` data win.
+- `sort` is `'none'` (default), `'location'`, or `'title'`. Title sort
+  puts untitled tracks last and breaks ties by location. Comparison is by
+  UTF-16 code unit, not locale, so output is the same on every machine.
+
+Dedupe runs before sorting. The playlist you pass in is not modified.
+
 ## Format notes
 
 - A file is "extended" if its first non-blank line is exactly `#EXTM3U`.
